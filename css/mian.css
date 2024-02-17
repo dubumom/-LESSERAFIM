@@ -1,0 +1,104 @@
+@charset 'utf-8';
+
+@import url(normalize.css);
+@import url(reset.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap');
+
+/*
+  VARIABLES
+*/
+:root{
+  --white:#fff;
+  --highlight:#A6282A;
+  --font:18px;
+  --base:27px;
+  --container:1400px;
+  --main-tt:54px;
+  --sub-tt:44px;
+  --content-tt:32px;
+}
+input, button{
+  outline:none;
+}
+/*
+  TYPOGRAPHY
+*/
+body{
+  font:var(--font)/var(--base) 'Noto Sans', sans-serif;
+  color:var(--white);
+  background: #000;
+}
+
+/*
+  LAYOUT
+*/
+.container {width: var(--container); margin: 0 auto;}
+.flex {display: flex;}
+.aic {align-items: center;}
+.jcc {justify-content: center;}
+.jcsb {justify-content: space-between;}
+.hidden{
+  position: absolute;
+  top: 0;
+  left:-9999em;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 
+HEADER
+*/
+.h_wrapper {
+  position: relative;
+  height: 100px;
+  z-index: 50;
+}
+.logo,
+header div> span.menu {
+  position: absolute;
+  top:50%; transform: translateY(-50%);
+}
+.logo{
+	width: 100px;
+	height: 32px;
+  right: 100%;
+}
+.logo a:before{
+	content:'';
+	background:url(../images/logo.png) no-repeat;
+	width:100%;
+	height:100%;
+	text-indent:-9999em;
+	display:block;
+}
+.logo span{
+	position: absolute;
+/* 	clip:rect(0 0 0 0); */
+	clip-path:polygon(0 0, 0 0, 0 0, 0 0);
+	width: 0;
+	height: 0;
+	overflow:hidden;
+}
+header div> span.menu {
+  font-size: 35px;
+  left: 100%;
+}
+
+nav {
+  background: #00f;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 100;
+}
+nav ul {
+  position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: var(--main-tt);
+  font-weight: bold;
+  line-height: calc(var(--main-tt) * 1.5 );
+}
+
+/* ASIDE : SNS */
