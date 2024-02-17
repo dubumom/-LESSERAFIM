@@ -48,7 +48,7 @@ body{
 }
 
 /* 
-HEADER
+HEADER : LOGO
 */
 .h_wrapper {
   position: relative;
@@ -61,9 +61,9 @@ header div> span.menu {
   top:50%; transform: translateY(-50%);
 }
 .logo{
-	width: 100px;
-	height: 32px;
-  right: 100%;
+	width: 160px;
+	height: 52px;
+  left: 0px;
 }
 .logo a:before{
 	content:'';
@@ -72,6 +72,10 @@ header div> span.menu {
 	height:100%;
 	text-indent:-9999em;
 	display:block;
+  transition: 0.3s;
+}
+.logo a:hover::before {
+  background:url(../images/logo-hover.png) no-repeat;
 }
 .logo span{
 	position: absolute;
@@ -80,25 +84,76 @@ header div> span.menu {
 	width: 0;
 	height: 0;
 	overflow:hidden;
+  cursor: pointer;
 }
 header div> span.menu {
-  font-size: 35px;
+  font-size: 50px;
   left: 100%;
+  transition: 0.3s;
+  cursor: pointer;
 }
-
+header div> span.menu:hover {color: var(--highlight);}
+/* 
+HEADER : NAV 
+*/
 nav {
-  background: #00f;
+  background: rgba(0,0,0,0.8);
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 100;
+  display: none;
+  transition: 0.5s;
 }
 nav ul {
   position: absolute;
   left: 50%; top: 50%; transform: translate(-50%, -50%);
   text-align: center;
+}
+nav a {
+  position: relative;
   font-size: var(--main-tt);
   font-weight: bold;
-  line-height: calc(var(--main-tt) * 1.5 );
+  line-height: calc(var(--main-tt) * 1.5);
 }
-
+nav a::after {
+  content: attr(data-text);
+  position: absolute; left: 0; top: 0;
+  width: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.3s ease-in;
+  color: var(--highlight);
+}
+nav a:hover::after {width: 100%;}
+nav .close{
+  position: absolute;
+  right: 5%; top: 5%;
+  cursor: pointer;
+  font-size: var(--main-tt);
+  transition: 0.3s;
+}
+nav .close:hover {
+  color: var(--highlight);
+}
 /* ASIDE : SNS */
+#sns {
+  position: fixed; top: 50%;
+  left: -50px;
+  z-index: 100;
+  transition: 0.5s;
+}
+#sns span {order:3; }
+#sns h2 {
+  order: 2;
+  padding-left: 20px;
+  padding-right: 5px;
+  writing-mode: vertical-rl;
+  cursor: pointer;
+}
+#sns h2:hover {color: var(--highlight);}
+#sns h2:hover+span {color: var(--highlight);}
+#sns .snslist {order: 1;}
+#sns.toggle {left: 50px;}
+/* 
+MAIN : BANNER
+*/
