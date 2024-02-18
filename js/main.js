@@ -111,3 +111,53 @@ slideWrapper.addEventListener('mouseenter',()=>{
 slideWrapper.addEventListener('mouseleave',()=>{
   autoSlide();
 });
+
+
+//SCHEDULE : POPUP
+
+var calendarEl = document.getElementById('calendar');
+let popup = document.querySelector('dialog');
+var calendar = new FullCalendar.Calendar(calendarEl, {
+  initialView: 'dayGridMonth',
+  googleCalendarApiKey: 'AIzaSyDfixLPrEr2-za6038iwvm-MzGiRJUjdHc',
+  events: {
+    googleCalendarId: '940e6a5675cd87e70f2e9c261f1168d3cc9d917573e66c26e25d540c3223f136@group.calendar.google.com'
+  },
+  eventClick: function(info) {
+    info.jsEvent.preventDefault();
+    //alert('Event: ' + info.event.title);
+    //console.log(info.event.extendedProps.description);
+
+    popup.querySelector('div').innerHTML = `
+      <h3>${info.event.title}</h3>
+      <div>${info.event.extendedProps.description}</div>
+    `;
+    popup.setAttribute('open','open')
+    }
+});
+calendar.render();
+
+popup.querySelector('button').addEventListener('click',()=>{
+  popup.removeAttribute('open');
+});
+
+
+//FOOTER : FAMLIY SITE
+const footer = document.querySelector('.f_site');
+const mainMenu = footer.querySelectorAll('.f_site ul > li');
+const initHeight = footer.offsetHeight;
+let tallestHeight = 0;
+
+for(let li of mainMenu){
+	let smheight = li.querySelector('ul').offsetHeight;
+	if(smheight > tallestHeight){
+		tallestHeight = smheight;
+	}
+	let footerHeight = tallestHeight + footer.offsetHeight + 50;
+	footer.addEventListener('mouseover',()=>{
+		footer.style.height = `${footerHeight}px`;
+	});
+	footer.addEventListener('mouseleave',()=>{
+		footer.style.height = `${initHeight}px`;
+	});
+}
