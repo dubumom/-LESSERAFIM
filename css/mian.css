@@ -65,8 +65,8 @@ HEADER : LOGO
   z-index: 50;
   transition: 0.3s;
 }
-.h_wrapper.sticky {
-  position: fixed; top: 0;
+header.sticky {
+  position: fixed; top: 0; left: 0; right: 0;
   background: linear-gradient(180deg, rgba(23,23,23,1) 38%, rgba(23,23,23,0.9641106442577031) 46%, rgba(23,23,23,0.8352591036414566) 59%, rgba(23,23,23,0.695203081232493) 70%, rgba(23,23,23,0) 100%);
 }
 /* .logo,
@@ -330,6 +330,9 @@ hr {
   background: rgb(255,255,255);
   background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.19) 6%, rgba(255,255,255,0.69) 20%, rgba(255,255,255,0.89) 30%, rgba(255,255,255,0.9780287114845938) 40%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 53%, rgba(255,255,255,0.98) 60%, rgba(255,255,255,0.89) 70%, rgba(255,255,255,0.69) 80%, rgba(255,255,255,0.19) 96%, rgba(255,255,255,0) 100%);
 }
+footer {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(166,40,42,1) 100%);
+}
 address {text-align: center;}
 address li {
   font-size: 16px;
@@ -422,6 +425,8 @@ MIAN : COMPANY
 .companr_btns a + a {
   margin: 40px;
 }
+
+
 /* map */
 #div {
   width: 100%;

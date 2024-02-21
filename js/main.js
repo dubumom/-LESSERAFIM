@@ -1,5 +1,5 @@
 //HEADER 고정
-const header = document.querySelector('.h_wrapper');
+const header = document.querySelector('header');
 const headerOst = header.offsetTop;
 
 window.addEventListener('scroll',()=>{
