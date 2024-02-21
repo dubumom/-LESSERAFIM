@@ -422,3 +422,8 @@ MIAN : COMPANY
 .companr_btns a + a {
   margin: 40px;
 }
+/* map */
+#div {
+  width: 100%;
+  height: 500px;
+}
