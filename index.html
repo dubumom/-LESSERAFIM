@@ -11,14 +11,14 @@
 </head>
 <body>
 <!-- header -->
-  <header>
+  <header class="container">
     <div class="h_wrapper container flex jcsb aic">
       <h1 class="logo">
         <a href=""><span>acme</span></a>
       </h1>
       <span class="material-symbols-outlined menu">menu</span>
     </div>
-    <nav>
+    <nav id="top_menu">
       <ul>
         <li><a href="#member" data-text="LESSERAFIM">LESSERAFIM</a></li>
         <li><a href="#album" data-text="ALBUM">ALBUM</a></li>
@@ -26,6 +26,9 @@
         <li><a href="#schedule" data-text="SCHEDULE">SCHEDULE</a></li>
         <li><a href="#company" data-text="SOURCE MUSIC">SOURCE MUSIC</a></li>
       </ul>
+      <h2 class="logo">
+        <a href=""><span>acme</span></a>
+      </h2>
       <span class="material-symbols-outlined close">close</span>
     </nav>
   </header>
@@ -43,7 +46,7 @@
     </ul>
   </aside>
 <!-- main -->
-  <main>
+  <main id="content">
     <!-- banner -->
     <section id="banner" class="">
       <div class="slide-wrapper">
@@ -374,32 +377,38 @@
     <!-- company -->
     <section id="company" class="container">
       <h2>SOURCE MUSIC</h2>
-      <div class="company_slide_wrapper">
-        <ul class="company_slide_contents" >
-          <li><img src="" alt=""></li>
-          <li><img src="" alt=""></li>
-          <li><img src="" alt=""></li>
-          <li><img src="" alt=""></li>
-        </ul>
+      <div class="company_wrapper flex jcsb aic">
+        <div class="company_slide_wrapper">
+          <ul class="company_slide_contents" >
+            <li class="company_bg1"></li>
+            <li class="company_bg2"></li>
+            <li class="company_bg2"></li>
+          </ul>
+        </div>
+        <div class="company_txt">
+          <h3>소스뮤직(SOURCE MUSIC)은</h3>
+          <p>
+            <em>‘이유와 근거가 있는 음악을 듣는 사람들에게감동을 준다'</em>라는 <br>
+            가치와 목표를 실현하는 걸그룹 전문 레이블입니다. 음악이 행복한 삶의 근원이<br>
+            될 수 있도록양질의 콘텐츠 제작에 집중해 왔으며, 혁신적인 음악 비즈니스를 통해글로벌 음악 산업을 선도하는 회사를 지향합니다.
+          </p>
+          
+          <div class="companr_btns">
+            <a><span class="material-symbols-outlined">location_on</span>찾아오시는길</a>
+            <a><span class="material-symbols-outlined">help</span>오디션 문의</a>
+          </div>
+        </div>
       </div>
-      <h3>소스뮤직(SOURCE MUSIC)은</h3>
-      <blockqoute>‘이유와 근거가 있는 음악을 듣는 사람들에게
-        감동을 준다'라는 가치와 목표를 실현하는 
-        걸그룹 전문 레이블입니다.
-        음악이 행복한 삶의 근원이 될 수 있도록양질의 콘텐츠 제작에 집중해 왔으며,
-        혁신적인 음악 비즈니스를 통해글로벌 음악 산업을 선도하는 회사를 지향합니다.
-      </blockqoute>
 
-      <button><span class="material-symbols-outlined">location_on</span>찾아오시는길</button>
-      <button><span class="material-symbols-outlined">help</span>오디션 문의</button>
+
     </section>
   </main>
 <!-- footer -->
   <hr>
   <footer class="container flex jcsb aic">
-    <h1 class="logo">
+    <h2 class="logo">
       <a href=""><span>acme</span></a>
-    </h1>
+    </h2>
     <address>
       <ul>
         <li>SOURCE MUSIC Co.Ltd.</li>

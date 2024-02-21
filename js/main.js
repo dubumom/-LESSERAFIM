@@ -1,3 +1,21 @@
+//HEADER 고정
+const header = document.querySelector('.h_wrapper');
+const headerOst = header.offsetTop;
+
+window.addEventListener('scroll',()=>{
+  
+  let scrollAmt = window.scrollY;
+  console.log(scrollAmt);
+
+
+if(scrollAmt > 491){
+  header.classList.add('sticky');
+} else {
+  header.classList.remove('sticky');  
+}
+});
+
+
 //HEADER : NAV
 const menuBtn = document.querySelector('header div> span.menu');
 const logo = document.querySelector('.logo')
@@ -8,13 +26,28 @@ menuBtn.addEventListener('click',()=>{
   nav.style.display = 'block';
   menuBtn.style.opacity = 0;
   sns.style.left = '50px';
-  logo.style.zIndex = 1000; // 물어보기 -> 같은 부모 밑에 있는 태그끼리만 적용되는 것인지!
 });
 closeBtn.addEventListener('click',()=>{
   nav.style.display = 'none';
   menuBtn.style.opacity = 1;
-  sns.style.left = '-50px';
+  sns.style.left = '-50px'; // 왜 햄버거 바 까지 지워나요?
 });
+//HEADER : NAV 섹션이동
+const menu =  document.querySelectorAll('#top_menu a');
+const section =  document.querySelectorAll('#contents > section');
+
+for(let m of menu){
+  m.addEventListener('click',(e)=>{
+    e.preventDefault();
+    let targetId = m.getAttribute('href');
+    console.log(targetId);
+    let targetSection = document.querySelector(targetId);
+    let targetOST = targetSection.offsetTop;
+    window.scrollTo({left:0, top: targetOST, behavior:'smooth' });
+
+    m.closest('#top_menu').style.display = 'none';
+  });
+}
 
 //ASIDE : SNS 
 
@@ -140,6 +173,27 @@ calendar.render();
 popup.querySelector('button').addEventListener('click',()=>{
   popup.removeAttribute('open');
 });
+
+// MAIN:COMPANY
+let slideUi = document.querySelector('.company_slide_contents');
+let slide3 = document.querySelectorAll('.company_slide_contents li');
+let cpSlideCount = slide3.length;
+let currentIdx = 0;
+
+slide3[0].classList.add('cpactive');
+
+
+function autoSlide (){
+  let timer = setInterval(()=>{
+  let nextIdx = (currentIdx + 1) % cpSlideCount;
+  slide3[currentIdx].classList.remove('cpactive');
+  slide3[nextIdx].classList.add('cpactive');
+
+  currentIdx = nextIdx;
+}, 3000);
+}
+
+autoSlide();
 
 
 //FOOTER : FAMLIY SITE

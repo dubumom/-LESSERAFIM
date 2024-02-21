@@ -11,7 +11,7 @@
 :root{
   --white:#fff;
   --highlight:#A6282A;
-  --sub-color:#808080;
+  --sub-color:#d0d0d0;
   --font:18px;
   --base:27px;
   --container:1400px;
@@ -53,6 +53,9 @@ body{
 }
 #member, #album,#goods,#schedule,#company, footer {padding: calc(var(--base) * 3) 0;}
 #member h2,#album h2,#goods h2,#schedule h2,#company h2 {margin-bottom: calc(var(--base) * 3);}
+
+
+
 /* 
 HEADER : LOGO
 */
@@ -60,6 +63,11 @@ HEADER : LOGO
   position: sticky;
   height: 100px;
   z-index: 50;
+  transition: 0.3s;
+}
+.h_wrapper.sticky {
+  position: fixed; top: 0;
+  background: linear-gradient(180deg, rgba(23,23,23,1) 38%, rgba(23,23,23,0.9641106442577031) 46%, rgba(23,23,23,0.8352591036414566) 59%, rgba(23,23,23,0.695203081232493) 70%, rgba(23,23,23,0) 100%);
 }
 /* .logo,
 header div> span.menu {
@@ -131,6 +139,10 @@ nav a::after {
   color: var(--highlight);
 }
 nav a:hover::after {width: 100%;}
+nav h2 {
+  position: absolute;
+  left: 11%; top: 3%;
+}
 nav .close{
   position: absolute;
   right: 11%; top: 3%;
@@ -309,7 +321,9 @@ dialog{
 /* 
   FOOTER
 */
+
 hr {
+  margin-top: calc(var(--base) * 3) 0;
   width: 1400px;
   border: none;
   height: 2px;
@@ -330,4 +344,81 @@ address li strong {color: var(--white);}
 .f_site > ul > li {border-bottom: 1px solid var(--white);} /*물어보기 famliy site 글씨 밑에 밑줄*/
 .f_site span {
   transform: translateY(5px);
+}
+
+/* 
+MIAN : COMPANY
+*/
+
+.company_wrapper {
+  gap: 50px;
+}
+.company_slide_wrapper {
+  position: relative;
+  width: 500px;
+  overflow: hidden;
+  height: 500px;
+}
+.company_slide_contents {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  margin:0;
+  padding: 0;
+  transition: left .3s ease-in;
+  left: 0;
+}
+.company_slide_contents>li {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  visibility: hidden;
+  opacity: 0;
+  transition:opacity 0.3s;
+}
+.company_slide_contents>li.cpactive {
+  opacity: 1;
+  visibility: visible;
+}
+.company_bg1 {background: url(../images/sorcesmusic-bg1.png);}
+.company_bg2 {background: url(../images/sorcesmusic-bg2.png);}
+.company_bg3 {background: url(../images/sorcesmusic-bg3.png);}
+.company_txt {
+  width: 55%;
+  text-align: center;
+}
+.company_txt h3 {
+  font-size: var(--sub-tt);
+  padding: calc(var(--base) * 1.5) 0;
+}
+.company_txt> p {
+  font-size: 1.5rem;
+  line-height: 55px;
+}
+.company_txt p> em{
+  border-bottom: 2px solid var(--highlight);
+}
+.companr_btns {
+  margin: var(--base) 0;
+}
+.companr_btns a {
+  display: inline-block;
+  width: 220px;
+  height: 50px;
+  color: var(--highlight);
+  border-radius: 50px;
+  line-height: 50px;
+  background: var(--white);
+}
+.companr_btns .a span {
+  font-size: 30px;
+  vertical-align: bottom;
+}
+.companr_btns a + a {
+  margin: 40px;
 }
