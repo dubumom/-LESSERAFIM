@@ -34,6 +34,7 @@ body{
   font-size: var(--main-tt);
   text-shadow: 3px 3px 4px var(--highlight);
 }
+
 /*
   LAYOUT
 */
@@ -102,7 +103,7 @@ header div> span.menu:hover {color: var(--highlight);}
 HEADER : NAV 
 */
 nav {
-  background: rgba(0,0,0,0.9);
+  background: rgb(0,0,0);
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 100;
@@ -140,7 +141,11 @@ nav .close{
 nav .close:hover {
   color: var(--highlight);
 }
-/* ASIDE : SNS */
+
+/* 
+ASIDE : SNS 
+*/
+
 #sns {
   position: fixed; top: 50%;
   left: -50px;
@@ -157,6 +162,7 @@ nav .close:hover {
 }
 #sns h2:hover {color: var(--highlight);}
 #sns h2:hover+span {color: var(--highlight);}
+#sns li:hover {background: var(--highlight);}
 #sns .snslist {order: 1;}
 #sns.toggle {left: 25px;}
 
@@ -189,7 +195,7 @@ MAIN : BANNER
 .slide-wrapper .controls {
   position: absolute;
   bottom: 10px;
-  z-index: 100;
+  z-index: 50;
   object-fit: cover;
   transition: all .3s ease-in;
 }
