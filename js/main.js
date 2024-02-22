@@ -1,4 +1,4 @@
-//HEADER 고정
+/* ---------- HEADER 고정 ---------- */
 const header = document.querySelector('header');
 const headerOst = header.offsetTop;
 
@@ -15,7 +15,7 @@ if(scrollAmt > 491){
 }
 });
 
-//HEADER : NAV
+/* ---------- HEADER : NAV ---------- */
 const menuBtn = document.querySelector('header div> span.menu');
 const logo = document.querySelector('.logo')
 const nav = document.querySelector('nav');
@@ -32,7 +32,7 @@ closeBtn.addEventListener('click',()=>{
   sns.style.left = '-50px';
 });
 
-//HEADER : NAV 섹션이동
+/* ---------- HEADER : NAV 섹션이동 ---------- */
 const menu =  document.querySelectorAll('#top_menu a');
 const section =  document.querySelectorAll('#contents > section');
 
@@ -51,13 +51,13 @@ for(let m of menu){
   });
 }
 
-//ASIDE : SNS 
+/* ---------- ASIDE : SNS ---------- */ 
 
 sns.addEventListener('click',()=>{
   sns.classList.toggle('toggle');
 });
 
-//MAIN: BANNER
+/* ---------- MAIN: BANNER ---------- */
 
 let slideWrapper = document.querySelector('.slide-wrapper'), 
     slideContainer = slideWrapper.querySelector('.slide-container'),  
@@ -147,7 +147,9 @@ slideWrapper.addEventListener('mouseleave',()=>{
   autoSlide();
 });
 
-//SCHEDULE : POPUP
+/* ---------- MAIN : GOODS---------- */
+
+/* ---------- MAIN : SCHEDULE - POPUP ---------- */
 
 var calendarEl = document.getElementById('calendar');
 let popup = document.querySelector('dialog');
@@ -175,7 +177,7 @@ popup.querySelector('button').addEventListener('click',()=>{
   popup.removeAttribute('open');
 });
 
-// MAIN:COMPANY
+/* ---------- MAIN:COMPANY ---------- */
 let slideUi = document.querySelector('.company_slide_contents');
 let slide3 = document.querySelectorAll('.company_slide_contents li');
 let cpSlideCount = slide3.length;
@@ -196,7 +198,7 @@ function autoSlide (){
 
 autoSlide();
 
-// MAIN:COMPANY 지도api
+/* ---------- MAIN:COMPANY 지도api ---------- */
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(37.5306844, 126.9702218), // 지도의 중심좌표
@@ -228,7 +230,7 @@ var infowindow = new kakao.maps.InfoWindow({
 // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 infowindow.open(map, marker); 
 
-//FOOTER : FAMLIY SITE
+/* ---------- FOOTER : FAMLIY SITE ---------- */
 const footer = document.querySelector('.f_site');
 const mainMenu = footer.querySelectorAll('.f_site ul > li');
 const initHeight = footer.offsetHeight;

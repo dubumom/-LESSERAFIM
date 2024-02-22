@@ -67,6 +67,7 @@ HEADER : LOGO
 }
 header.sticky {
   position: fixed; top: 0; left: 0; right: 0;
+  z-index: 9999;
   background: linear-gradient(180deg, rgba(23,23,23,1) 38%, rgba(23,23,23,0.9641106442577031) 46%, rgba(23,23,23,0.8352591036414566) 59%, rgba(23,23,23,0.695203081232493) 70%, rgba(23,23,23,0) 100%);
 }
 /* .logo,
@@ -164,8 +165,8 @@ ASIDE : SNS
   z-index: 100;
   transition: 0.5s;
 }
-#sns span {order:3; }
-#sns h2 {
+#sns> span {order:3;}
+#sns> h2 {
   order: 2;
   padding-left: 20px;
   padding-right: 5px;
@@ -175,7 +176,7 @@ ASIDE : SNS
 #sns h2:hover {color: var(--highlight);}
 #sns h2:hover+span {color: var(--highlight);}
 #sns li:hover {background: var(--highlight);}
-#sns .snslist {order: 1;}
+#sns> .snslist {order: 1;}
 #sns.toggle {left: 25px;}
 
 /* 
@@ -250,8 +251,87 @@ MAIN : BANNER
   MAIN : MEMBER
 */
 
+/*
+  MAIN : GOODS
+*/
 
-
+#goods {
+  position: relative;
+}
+#goods .goods_slide_wrapper {
+  width: 1168px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#goods .goods_slide_wrapper ul {
+  gap: 20px;
+}
+#goods .goods_wrapper ul> li> div {
+  width: 276px;
+  height: 276px;
+  position: relative;
+  transition: 0.5s;
+}
+#goods .goods_slide_wrapper> ul> li> div + div {
+  margin-top: 20px;
+}
+#goods .goods_slide_wrapper> ul> li> div:hover .more_btn{display: block;}
+#goods .goods_slide_wrapper> ul> li> div> img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.goods_slide_wrapper .more_btn {
+  background: rgba(0,0,0,0.8);
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+  text-align: center;
+  display: none;
+}
+.goods_slide_wrapper .more_btn h3{padding: 5px;}
+.goods_slide_wrapper .more_btn_center {
+  width: 100%;
+  position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
+}
+.goods_slides.animated{
+	transition:left 0.5s;
+}
+.primary_btn a{
+  margin-top: 10px;
+  padding: 10px;
+  background: var(--white);
+  position: relative;
+}
+.primary_btn a:first-child {border-radius: 10px 0 0 10px;}
+.primary_btn a:first-child::after {
+  content: '';
+  display: block;
+  width: 1px; height: 30px;
+  background: var(--sub-color);
+  position: absolute;right: 0; top: 50%; transform: translateY(-50%);
+}
+.primary_btn a:last-child {border-radius: 0 10px 10px 0;}
+.primary_btn a:last-child::after {
+  content: '';
+  display: block;
+  width: 1px; height: 30px;
+  background: var(--sub-color);
+  position: absolute;left: 0; top: 50%; transform: translateY(-50%);
+}
+.primary_btn span {
+  font-size: 30px;
+  color: var(--highlight);
+  vertical-align: bottom;
+}
+.small_prev_btn, .small_next_btn {
+  font-size: 50px;
+  padding: 10px;
+  position: absolute; top: 50%;
+  cursor: pointer;
+}
+.small_prev_btn:hover, .small_next_btn:hover {color: var(--highlight);}
+.small_prev_btn {left: 0;}
+.small_next_btn {right: 0;}
 
 /*
   MAIN : SCHEDULE
@@ -319,37 +399,6 @@ dialog{
 }
 
 /* 
-  FOOTER
-*/
-
-hr {
-  margin-top: calc(var(--base) * 3) 0;
-  width: 1400px;
-  border: none;
-  height: 2px;
-  background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.19) 6%, rgba(255,255,255,0.69) 20%, rgba(255,255,255,0.89) 30%, rgba(255,255,255,0.9780287114845938) 40%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 53%, rgba(255,255,255,0.98) 60%, rgba(255,255,255,0.89) 70%, rgba(255,255,255,0.69) 80%, rgba(255,255,255,0.19) 96%, rgba(255,255,255,0) 100%);
-}
-footer {
-  background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(166,40,42,1) 100%);
-}
-address {text-align: center;}
-address li {
-  font-size: 16px;
-  color: var(--sub-color);
-}
-address li strong {color: var(--white);}
-.f_site {
-  height:33px; 
-	overflow:hidden;
-	transition: 0.5s;
-}
-.f_site > ul > li {border-bottom: 1px solid var(--white);} /*물어보기 famliy site 글씨 밑에 밑줄*/
-.f_site span {
-  transform: translateY(5px);
-}
-
-/* 
 MIAN : COMPANY
 */
 
@@ -361,6 +410,10 @@ MIAN : COMPANY
   width: 500px;
   overflow: hidden;
   height: 500px;
+}
+.company_slide_wrapper .company_mask {
+  position: absolute; left: 0; top: 0;
+  z-index: 100;
 }
 .company_slide_contents {
   position: absolute;
@@ -426,9 +479,44 @@ MIAN : COMPANY
   margin: 40px;
 }
 
+/* 
+  FOOTER
+*/
 
+hr {
+  margin-top: calc(var(--base) * 3) 0;
+  width: 1400px;
+  border: none;
+  height: 2px;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.19) 6%, rgba(255,255,255,0.69) 20%, rgba(255,255,255,0.89) 30%, rgba(255,255,255,0.9780287114845938) 40%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 53%, rgba(255,255,255,0.98) 60%, rgba(255,255,255,0.89) 70%, rgba(255,255,255,0.69) 80%, rgba(255,255,255,0.19) 96%, rgba(255,255,255,0) 100%);
+}
+footer {
+  background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(166,40,42,1) 100%);
+}
+address {text-align: center;}
+address li {
+  font-size: 16px;
+  color: var(--sub-color);
+}
+address li strong {color: var(--white);}
+.f_site {
+  height:33px; 
+	overflow:hidden;
+	transition: 0.5s;
+}
+.f_site > ul > li {border-bottom: 1px solid var(--white);} /*물어보기 famliy site 글씨 밑에 밑줄*/
+.f_site span {
+  transform: translateY(5px);
+}
+
+
+
+/* 
+  POPUP
+*/
 /* map */
-#div {
+#map {
   width: 100%;
   height: 500px;
 }
