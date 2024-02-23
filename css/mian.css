@@ -376,7 +376,9 @@ MAIN : BANNER
 #goods .goods_slide_wrapper> ul> li> div + div {
   margin-top: 20px;
 }
-#goods .goods_slide_wrapper> ul> li> div:hover .more_btn{display: block;}
+#goods .goods_slide_wrapper> ul> li> div:hover .more_btn{
+  display: block;
+}
 #goods .goods_slide_wrapper> ul> li> div> img{
   width: 100%;
   height: 100%;
