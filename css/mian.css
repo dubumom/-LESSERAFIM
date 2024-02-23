@@ -255,8 +255,19 @@ MAIN : BANNER
 /*
   MAIN : ALBUM
 */
+.album_box {}
+.album_box .list {height: 600px; border:1px solid yellow;}
+.album_box .list li {
+  
+}
 .album_item {
   writing-mode: vertical-rl;
+
+}
+.album_item h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .album_item figure img {display: none;}
 
