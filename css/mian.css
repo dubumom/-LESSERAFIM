@@ -252,24 +252,105 @@ MAIN : BANNER
   MAIN : MEMBER
 */
 
+
 /*
   MAIN : ALBUM
 */
 .album_box {}
-.album_box .list {height: 600px; border:1px solid yellow;}
+.album_box .list {height: 600px;}
 .album_box .list li {
-  
+  border-left:1px solid #9f9f9f;
+  flex:1;
+  transition:flex 0.5s;
+}
+.album_box .list li:last-child {
+  border-right: 1px solid #9f9f9f;
+}
+.album_box .list li .vertical{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  writing-mode:horizontal-bt;
+  opacity: 1;
+  visibility: visible;
+}
+.album_box .list li .vertical > *{
+  writing-mode:vertical-rl;
+  transform:rotateX(180deg) rotateY(180deg);
+  text-align: right;
+  color: #9f9f9f;
+}
+.album_box .list li.active2{
+  flex:3;
+}
+.album_box .list li.active2 .vertical{
+  opacity: 0;
+  visibility: hidden;  
+}
+.album_box .list li.active2 .album_item{
+  display: flex;
+}
+.album_box .list li.active2 .album_img{
+  opacity: 1;
 }
 .album_item {
-  writing-mode: vertical-rl;
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  gap: 40px;
+  transform: translateY(50px);
 }
 .album_item h3 {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-size: 26px;
 }
-.album_item figure img {display: none;}
+.album_item h3.s-text {
+  font-size: 22px;
+}
+.album_item figcaption{
+  text-align: center;
+  padding: 30px;
+  font-size: 20px;
+}
+.album_item figure .album_img {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.var_bg1:hover, .var_bg2:hover, .var_bg3:hover, .var_bg4:hover, .var_bg5:hover, .var_bg6:hover, .var_bg7:hover, .var_bg8:hover, .var_bg9:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/1st_album.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: brightness(10%);
+}
+.var_bg2:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/1st_album.png);
+}
+.var_bg3:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/2st_album.png);
+}
+.var_bg4:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/2st_album.png);
+}
+.var_bg5:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);
+  /* background-image: url(../images/3st_album.png); */
+}
+.var_bg6:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);
+}
+.var_bg7:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);
+}
+.var_bg8:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/4st_album.png);
+}
+.var_bg9:hover {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/5st_album.png);
+}
 
 /*
   MAIN : GOODS
@@ -467,6 +548,10 @@ MIAN : COMPANY
 .company_txt {
   width: 55%;
   text-align: center;
+  display: block;
+  /* transform: translateY(300px);
+  display: none; */
+  transition: 0.8s;
 }
 .company_txt h3 {
   font-size: var(--sub-tt);

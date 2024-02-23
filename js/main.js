@@ -8,11 +8,16 @@ window.addEventListener('scroll',()=>{
   console.log(scrollAmt);
 
 
-if(scrollAmt > 491){
-  header.classList.add('sticky');
-} else {
-  header.classList.remove('sticky');  
-}
+  if(scrollAmt > 491){
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');  
+  }
+
+  if(scrollAmt > 3710){
+    // document.querySelector('.company_text').style.transform='translateY(0px)';
+    // document.querySelector('.company_text').style.display='block';
+  }
 });
 
 /* ---------- HEADER : NAV ---------- */
@@ -147,6 +152,20 @@ slideWrapper.addEventListener('mouseleave',()=>{
   autoSlide();
 });
 
+
+/* ---------- MAIN : ALBUM ---------- */
+const album = document.querySelectorAll('.album_box .list li');
+
+for(let li of album){
+  li.addEventListener('click',(e)=>{
+    for(let a of album){
+      a.classList.remove('active2');
+    }
+    e.currentTarget.classList.add('active2');
+  });
+  
+}
+
 /* ---------- MAIN : GOODS---------- */
 
 /* ---------- MAIN : SCHEDULE - POPUP ---------- */
@@ -201,14 +220,14 @@ autoSlide();
 /* ---------- MAIN:COMPANY 지도api ---------- */
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
-        center: new kakao.maps.LatLng(37.5306844, 126.9702218), // 지도의 중심좌표
+        center: new kakao.maps.LatLng(37.5306844,126.9702218), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
     };
 
 var map = new kakao.maps.Map(mapContainer, mapOption);
 
 // 마커가 표시될 위치입니다 
-var markerPosition  = new kakao.maps.LatLng(37.5306844, 126.9702218); 
+var markerPosition  = new kakao.maps.LatLng(37.5306844,126.9702218); 
 
 // 마커를 생성합니다
 var marker = new kakao.maps.Marker({
@@ -218,8 +237,8 @@ var marker = new kakao.maps.Marker({
 // 마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);
 
-var iwContent = '<div style="padding:5px;">Hello World! <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-    iwPosition = new kakao.maps.LatLng(37.5306844, 126.9702218); //인포윈도우 표시 위치입니다
+var iwContent = '<div style="padding:5px;">소스 뮤직<br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwPosition = new kakao.maps.LatLng(37.5306844,126.9702218); //인포윈도우 표시 위치입니다
 
 // 인포윈도우를 생성합니다
 var infowindow = new kakao.maps.InfoWindow({
