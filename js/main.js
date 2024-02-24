@@ -207,7 +207,7 @@ s_prevBtn.addEventListener('click',()=>{
 var calendarEl = document.getElementById('calendar');
 let popup = document.querySelector('dialog');
 const closeCalender = document.querySelector('dialog button');
-let randomNumber = Math.floor(Math.random() * 5);
+
 var calendar = new FullCalendar.Calendar(calendarEl, {
   initialView: 'dayGridMonth',
   googleCalendarApiKey: 'AIzaSyDfixLPrEr2-za6038iwvm-MzGiRJUjdHc',
@@ -224,13 +224,13 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
       <div>${info.event.extendedProps.description}</div>
     `;
     popup.setAttribute('open','open')
+    let randomNumber = Math.floor(Math.random() * 5);
+      popup.style.backgroundImage = `url(../images/random0${randomNumber}.png)`;
     }
 });
 calendar.render();
 
-popup.addEventListener('click',()=>{
-  popup.style.backgroundImage = `url(../images/random0${randomNumber}.png)`;
-});
+
 
 popup.querySelector('button').addEventListener('click',()=>{
   popup.removeAttribute('open');
