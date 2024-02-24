@@ -672,8 +672,8 @@ address li strong {color: var(--white);}
 }
 .map_wrapper .map_close {
   position: absolute;
-  top: 100px; right: 30px;
-  font-size: 35px;
+  top: 100px; right: 100px;
+  font-size: 50px;
   cursor: pointer;
   color: var(--white);
 }
@@ -681,4 +681,6 @@ address li strong {color: var(--white);}
 .map_wrapper #map {
   width: 80%;
   height: 50%;
+  position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
 }
