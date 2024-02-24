@@ -29,6 +29,7 @@ body{
   font:var(--font)/var(--base) 'Noto Sans', sans-serif;
   color:var(--white);
   background: #000;
+  overflow-x: hidden;
 }
 #member h2,#album h2,#goods h2,#schedule h2,#company h2 {
   font-size: var(--main-tt);
@@ -661,7 +662,15 @@ address li strong {color: var(--white);}
   POPUP
 */
 /* map */
-#map {
+.map_wrapper {
   width: 100%;
-  height: 500px;
+  height: 100vh;
+  position: fixed; left: 100%; top: 0; bottom: 0;
+  z-index: 100;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(2px);
+}
+.map_wrapper #map {
+  width: 80%;
+  height: 50%;
 }

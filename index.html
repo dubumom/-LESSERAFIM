@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js'></script>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f320e9c11a3919ed97a080b3e6ad3da3"></script>
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f320e9c11a3919ed97a080b3e6ad3da3"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="./css/mian.css">
 </head>
@@ -582,13 +582,16 @@
           </p>
           
           <div class="companr_btns">
-            <a><span class="material-symbols-outlined">location_on</span>찾아오시는길</a>
-            <a><span class="material-symbols-outlined">help</span>오디션 문의</a>
+            <a href="#"><span class="material-symbols-outlined map_btn">location_on</span>찾아오시는길</a>
+            <a href="#"><span class="material-symbols-outlined help_btn">help</span>오디션 문의</a>
           </div>
         </div>
       </div>
 
-      <div id="map">지도</div>
+      <aside class="map_wrapper">
+        <h2 class="hidden">map</h2>
+        <div id="map">지도</div>
+      </aside>
     </section>
   </main>
 <!-- footer -->
