@@ -113,10 +113,11 @@ HEADER : NAV
 */
 nav {
   background: rgb(0,0,0);
+  width: 100%; height: 100vh;
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0; left: 100%;
   z-index: 100;
-  display: none;
+  /* display: none; */
   transition: 0.5s;
 }
 nav ul {
@@ -318,39 +319,20 @@ MAIN : BANNER
   opacity: 0;
   transition: opacity 0.3s;
 }
-
 .var_bg1:hover, .var_bg2:hover, .var_bg3:hover, .var_bg4:hover, .var_bg5:hover, .var_bg6:hover, .var_bg7:hover, .var_bg8:hover, .var_bg9:hover {
   background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/1st_album.png);
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
   backdrop-filter: brightness(10%);
 }
-.var_bg2:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/1st_album.png);
-}
-.var_bg3:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/2st_album.png);
-}
-.var_bg4:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/2st_album.png);
-}
-.var_bg5:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);
-  /* background-image: url(../images/3st_album.png); */
-}
-.var_bg6:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);
-}
-.var_bg7:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);
-}
-.var_bg8:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/4st_album.png);
-}
-.var_bg9:hover {
-  background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/5st_album.png);
-}
+.var_bg2:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/1st_album.png);}
+.var_bg3:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/2st_album.png);}
+.var_bg4:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/2st_album.png);}
+.var_bg5:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);}
+.var_bg6:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);}
+.var_bg7:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/3st_album.png);}
+.var_bg8:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/4st_album.png);}
+.var_bg9:hover {background-image: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),url(../images/5st_album.png);}
 
 /*
   MAIN : GOODS
@@ -439,6 +421,7 @@ MAIN : BANNER
 /*
   MAIN : SCHEDULE
 */
+
 #calendar {height: 600px;}
 .fc .fc-toolbar {display: block;}
 .fc-toolbar-chunk{text-align: center;}

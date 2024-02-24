@@ -27,12 +27,12 @@ const nav = document.querySelector('nav');
 const closeBtn = nav.querySelector('.close');
 const sns = document.getElementById('sns');
 menuBtn.addEventListener('click',()=>{
-  nav.style.display = 'block';
+  nav.style.left = '0';
   menuBtn.style.opacity = 0;
   sns.style.left = '50px';
 });
 closeBtn.addEventListener('click',()=>{
-  nav.style.display = 'none';
+  nav.style.left = '100%';
   menuBtn.style.opacity = 1;
   sns.style.left = '-50px';
 });
@@ -151,7 +151,6 @@ slideWrapper.addEventListener('mouseenter',()=>{
 slideWrapper.addEventListener('mouseleave',()=>{
   autoSlide();
 });
-
 
 /* ---------- MAIN : ALBUM ---------- */
 const album = document.querySelectorAll('.album_box .list li');
