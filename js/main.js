@@ -1,3 +1,44 @@
+
+/* ---------- modal : cookie ---------- */
+
+//쿠키생성 함수
+function setCookie(name, val, day){
+  let date = new Date();
+  date.setDate(date.getDate()+day);
+  document.cookie=`${name}=${val};Expires=${date}`;
+}
+
+//쿠키조회 함수
+function getCookie(name){
+
+  let cookieArr = document.cookie.split(';');
+  console.log(cookieArr);
+
+  for(let cookie of cookieArr){
+    if(cookie.indexOf(name) > -1){
+      document.querySelector('.modal').style.display = 'none';
+    }
+  }
+}
+
+//쿠키삭제 함수
+function delCookie(name){
+  let date = new Date();
+  date.setDate(date.getDate()-1);
+  document.cookie=`${name}='';Expires=${date}`;
+} 
+
+
+document.querySelector('.modal_close').addEventListener('click',()=>{
+  document.querySelector('.modal').style.display = 'none';
+});
+
+let clickCooke = document.querySelector('#checkbox').addEventListener('click',()=>{
+  setCookie('Today','resserafim.com',1);
+  getCookie('Today');
+});
+
+
 /* ---------- HEADER 고정 ---------- */
 const header = document.querySelector('header');
 const headerOst = header.offsetTop;

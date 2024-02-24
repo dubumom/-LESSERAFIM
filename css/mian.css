@@ -671,6 +671,42 @@ address li strong {color: var(--white);}
 /* 
   POPUP
 */
+/* modal */
+.modal {
+  position: fixed;
+  left: 5%; top: 5%;
+  z-index: 999999999;
+}
+.modal img {vertical-align: bottom; width: 100%;}
+.modal p {
+  position: relative;
+  padding: 0 2%;
+  background-color: var(--highlight);
+  border: 1px solid #000;
+  border-top: none;
+  font-size: 14px;
+}
+#checkbox {
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  vertical-align: middle;
+  appearance: none;
+  cursor: pointer;
+  margin: 3px 3px 3px 3px;
+}
+input[type="checkbox"]:checked {
+  background: #000;
+}
+.modal label {cursor: pointer;}
+.modal .modal_close {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+
 /* map */
 .map_wrapper {
   width: 100%;
