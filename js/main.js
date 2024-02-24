@@ -292,8 +292,9 @@ var infowindow = new kakao.maps.InfoWindow({
 infowindow.open(map, marker); 
 
 const mapbtn = document.querySelector('.map_btn');
+const map = document.querySelector('.map_wrapper');
 mapbtn.addEventListener('click',()=>{
-  mapbtn.style.left = `0px`;
+  map.style.left = `0px`;
 });
 
 
