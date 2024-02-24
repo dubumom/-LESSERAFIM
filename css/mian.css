@@ -474,14 +474,31 @@ MAIN : BANNER
 dialog{
   position: fixed;
   width: 300px;
+  height: 200px;
   margin: 0;
   z-index: 999;
   padding: 30px;
   background: #fff;
   left: 50%; top: 50%; transform: translate(-50%, -50%);
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   border: none;
   border-radius: 10px;
+  background-image: url(../images/random01.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+}
+dialog div {
+  font-size: var(--content-tt);
+  line-height: var(--main-tt);
+  margin-bottom: 60px;
+}
+dialog button {
+  padding: 5px 10px;
+  background: var(--highlight);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* 
