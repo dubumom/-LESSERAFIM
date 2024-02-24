@@ -293,8 +293,8 @@ infowindow.open(map, marker);
 
 const mapbtn = document.querySelector('.map_btn');
 const mapwrapper = document.querySelector('.map_wrapper');
-mapbtn.addEventListener('click',()=>{
-  mapwrapper.style.left = `0px`;
+  mapbtn.addEventListener('click',()=>{
+  mapwrapper.style.left = '0px';
 });
 
 
