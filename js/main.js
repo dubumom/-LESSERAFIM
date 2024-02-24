@@ -292,10 +292,14 @@ var infowindow = new kakao.maps.InfoWindow({
 infowindow.open(map, marker); 
 
 const mapbtn = document.querySelector('.map_btn');
+const mapClosebtn = document.querySelector('.map_close');
 const mapwrapper = document.querySelector('.map_wrapper');
   mapbtn.addEventListener('click',()=>{
-  mapwrapper.style.left = '0px';
-});
+    mapwrapper.style.left = '0px';
+  });
+  mapClosebtn.addEventListener('click',()=>{
+    mapwrapper.style.left = '100%';
+  });
 
 
 /* ---------- FOOTER : FAMLIY SITE ---------- */
