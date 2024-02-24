@@ -378,8 +378,8 @@ MAIN : BANNER
   position: absolute;
   left: 50%; top: 50%; transform: translate(-50%, -50%);
 }
-.goods_slides.animated{
-	transition:left 0.5s;
+.goods_slides{
+	transition: 0.5s;
 }
 .primary_btn a{
   margin-top: 10px;

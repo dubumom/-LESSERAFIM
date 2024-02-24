@@ -165,7 +165,42 @@ for(let li of album){
   
 }
 
-/* ---------- MAIN : GOODS---------- */
+
+/* ---------- MAIN:GOODS---------- */
+const g_slideWrapper = document.querySelector('.goods_slide_wrapper');
+const g_slideContainer = g_slideWrapper.querySelector('.goods_slides');
+const g_slides = g_slideContainer.querySelectorAll('li');
+let g_currentIdx = 0;
+const g_slideCount = g_slides.length;
+const slideWidth = 276;
+const slideMargin = 20;
+const slideToShow = 4;
+const s_prevBtn = document.querySelector('.small_prev_btn');
+const s_nextBtn = document.querySelector('.small_next_btn');
+
+g_slideContainer.style.width = '1168px';
+
+function moveSlide2(idx){
+  g_slideContainer.style.transform = `translateX(${-idx*(slideWidth + slideMargin)}px)`;
+  g_currentIdx = idx;
+  console.log(g_currentIdx);
+}
+
+s_nextBtn.addEventListener('click',()=>{
+  if(g_currentIdx == (g_slideCount - slideToShow)){ 
+    moveSlide2(0);
+  }else{
+    moveSlide2(g_currentIdx+1);
+  }
+});
+
+s_prevBtn.addEventListener('click',()=>{
+  if(g_currentIdx == 0){ 
+    moveSlide2(g_slideCount - slideToShow);
+  }else{
+    moveSlide2(g_currentIdx-1);
+  }
+});
 
 /* ---------- MAIN : SCHEDULE - POPUP ---------- */
 
