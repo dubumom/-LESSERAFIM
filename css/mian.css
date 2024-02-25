@@ -164,7 +164,7 @@ ASIDE : SNS
 #sns {
   position: fixed; top: 50%;
   left: -50px;
-  z-index: 100;
+  z-index: 101;
   transition: 0.5s;
 }
 #sns> span {order:3;}
