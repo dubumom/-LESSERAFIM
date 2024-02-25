@@ -179,6 +179,7 @@ ASIDE : SNS
 #sns h2:hover+span {color: var(--highlight);}
 #sns li:hover {background: var(--highlight);}
 #sns> .snslist {order: 1;}
+#sns> .snslist li +li {margin-top: -1px;}
 #sns.toggle {left: 25px;}
 
 /* 
@@ -207,6 +208,7 @@ MAIN : BANNER
   height: 100%;
   width: 100%;
 }
+
 .slide-wrapper .controls {
   position: absolute;
   bottom: 10px;
@@ -408,7 +410,8 @@ MAIN : BANNER
   margin-top: 20px;
 }
 #goods .goods_slide_wrapper> ul> li> div:hover .more_btn{
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 #goods .goods_slide_wrapper> ul> li> div> img{
   width: 100%;
@@ -419,7 +422,9 @@ MAIN : BANNER
   background: rgba(0,0,0,0.8);
   position: absolute; left: 0; top: 0; right: 0; bottom: 0;
   text-align: center;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
 }
 .goods_slide_wrapper .more_btn h3{padding: 5px;}
 .goods_slide_wrapper .more_btn_center {
@@ -537,7 +542,7 @@ dialog{
   background-size: contain;
 }
 dialog div {
-  font-size: var(--content-tt);
+  font-size: 24px;
   line-height: var(--main-tt);
   margin-bottom: 60px;
 }
@@ -599,10 +604,9 @@ MIAN : COMPANY
 .company_txt {
   width: 55%;
   text-align: center;
-  display: block;
-  /* transform: translateY(300px);
-  display: none; */
-  transition: 0.8s;
+  opacity: 0;
+  position: relative; top: 300px;
+  transition: all 2s;
 }
 .company_txt h3 {
   font-size: var(--sub-tt);
@@ -627,9 +631,9 @@ MIAN : COMPANY
   line-height: 50px;
   background: var(--white);
 }
-.companr_btns .a span {
+.companr_btns a span {
   font-size: 30px;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 .companr_btns a + a {
   margin: 40px;
@@ -656,12 +660,19 @@ address li {
   color: var(--sub-color);
 }
 address li strong {color: var(--white);}
-.f_site {
-  height:33px; 
-	overflow:hidden;
-	transition: 0.5s;
+.f_site {transition: 0.3s;}
+.f_site h3{
+  border-bottom: 1px solid var(--white);
+  cursor: pointer;
 }
-.f_site > ul > li {border-bottom: 1px solid var(--white);} /*물어보기 famliy site 글씨 밑에 밑줄*/
+.f_site:hover .hybe {
+  opacity: 1;
+}
+.hybe {
+  margin-top: 10px;
+  opacity: 0;
+}
+
 .f_site span {
   transform: translateY(5px);
 }
@@ -671,11 +682,15 @@ address li strong {color: var(--white);}
 /* 
   POPUP
 */
+
 /* modal */
 .modal {
   position: fixed;
   left: 5%; top: 5%;
   z-index: 999999999;
+}
+.modal.hide{
+  display: none;
 }
 .modal img {vertical-align: bottom; width: 100%;}
 .modal p {

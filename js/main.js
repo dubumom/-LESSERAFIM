@@ -1,42 +1,50 @@
 
 /* ---------- modal : cookie ---------- */
 
-//쿠키생성 함수
+const modal = document.querySelector('.modal');
+const input = modal.querySelector('input[type="checkbox"]');
+const modal_close =modal.querySelector('.modal_close');
+
+
+modal_close.addEventListener('click',(e)=>{
+  e.preventDefault();
+  // console.log(in5660put.checked);
+  if(input.checked){
+    //쿠키생성
+    setCookie('Portfolio','resserafim', 1);
+  }else{
+    //쿠키삭제
+    delCookie('Portfolio');
+  }
+  modal.classList.add('hide');
+});
 function setCookie(name, val, day){
-  let date = new Date();
-  date.setDate(date.getDate()+day);
-  document.cookie=`${name}=${val};Expires=${date}`;
-}
+    let date = new Date();
+    date.setDate(date.getDate()+day);
+    document.cookie = `${name}=${val};Expires=${date}`;
+  }
+  function delCookie(name){
+    let date = new Date();
+    date.setDate(date.getDate()-1);
+    document.cookie = `${name}='';Expires=${date}`;
+  }
 
-//쿠키조회 함수
-function getCookie(name){
+  function checkCookie(name){
+    let cookieArr = document.cookie.split(';');
+    let visited = false;
 
-  let cookieArr = document.cookie.split(';');
-  console.log(cookieArr);
-
-  for(let cookie of cookieArr){
-    if(cookie.indexOf(name) > -1){
-      document.querySelector('.modal').style.display = 'none';
+    for(let cookie of cookieArr){
+      if(cookie.indexOf(name) > -1) {
+        visited = true;
+      }
+    }
+    if(visited) {
+      modal.classList.add('hide');
+    } else {
+      modal.classList.remove('hide');
     }
   }
-}
-
-//쿠키삭제 함수
-function delCookie(name){
-  let date = new Date();
-  date.setDate(date.getDate()-1);
-  document.cookie=`${name}='';Expires=${date}`;
-} 
-
-
-document.querySelector('.modal_close').addEventListener('click',()=>{
-  document.querySelector('.modal').style.display = 'none';
-});
-
-let clickCooke = document.querySelector('#checkbox').addEventListener('click',()=>{
-  setCookie('Today','resserafim.com',1);
-  getCookie('Today');
-});
+  checkCookie('resserafim');
 
 
 /* ---------- HEADER 고정 ---------- */
@@ -56,8 +64,8 @@ window.addEventListener('scroll',()=>{
   }
 
   if(scrollAmt > 3710){
-    // document.querySelector('.company_text').style.transform='translateY(0px)';
-    // document.querySelector('.company_text').style.display='block';
+    document.querySelector('.company_txt').style.top='0px';
+    document.querySelector('.company_txt').style.opacity='1';
   }
 });
 
